@@ -31,13 +31,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'containerregistrydevuk'
-    repository: 'java'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-- task: KubernetesManifest@0
-  inputs:
-    action: 'deploy'
-    kubernetesServiceConnection: 'devkclcluster-aks-cluster-default'
