@@ -37,3 +37,7 @@ steps:
     repository: 'java'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: KubernetesManifest@0
+  inputs:
+    action: 'deploy'
+    kubernetesServiceConnection: 'devkclcluster-aks-cluster-default'
