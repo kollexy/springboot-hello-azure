@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kollexyspringboothelloazure 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kollexyspringboothelloazure
+  template:
+    metadata:
+      labels:
+        app: kollexyspringboothelloazure 
+    spec:
+      containers:
+        - name: kollexyspringboothelloazure 
+          image: containerregistrydevuk.azurecr.io/kollexyspringboothelloazure
+          ports:
+          - containerPort: 8080
